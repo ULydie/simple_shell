@@ -35,7 +35,7 @@ int _strncmp(char *str1, char *str2, int n);
 char *_strdup(char *str);
 char *_strchr(char *str, char c);
 
-void execution(char *cp, char **cmd);
+void exec(char *cp, char **cmd);
 char *findPath(void);
 
 /* helper function for efficient free */
