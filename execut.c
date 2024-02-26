@@ -17,7 +17,7 @@ void exec(char *cp, char **cmd)
 		perror(cp);
 	if (child_pid == 0)
 	{
-		execve(cp, cmd, env);
+		execve(cp, cmd, envir);
 		perror(cp);
 		free(cp);
 		freeBuffers(cmd);
