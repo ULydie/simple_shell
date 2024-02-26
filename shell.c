@@ -22,7 +22,7 @@ int main(int ac, char **av, char *envp[])
 	while (1)
 	{
 		freeBuffers(cmd);
-		freeBuffers(paths);
+		freeBuffers(pathss);
 		free(pathcommand);
 		propt_user();
 		linesize = getline(&lines, &bufsize, stdin);
@@ -36,9 +36,9 @@ int main(int ac, char **av, char *envp[])
 			continue;
 		if (checker(cmd, lines))
 			continue;
-		pathss = findPath();
+		paths = findPath();
 		pathss = tokenizerrs(paths);
-		pathcommand = test_path(paths, cmd[0]);
+		pathcommand = test_path(pathss, cmd[0]);
 		if (!pathcommand)
 			perror(av[0]);
 		else
