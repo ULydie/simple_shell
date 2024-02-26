@@ -21,7 +21,7 @@ char *findPath(void)
 			}
 			return (paths);
 		}
-		env++;
+		envir++;
 	}
 	return (NULL);
 }
