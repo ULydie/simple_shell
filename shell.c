@@ -14,7 +14,7 @@ int main(int ac, char **av, char *envp[])
 	char *lines = NULL, *pathcommand = NULL, *paths = NULL;
 	size_t bufsize = 0;
 	ssize_t linesize = 0;
-	char **cmd = NULL, **paths = NULL;
+	char **cmd = NULL, **pathss = NULL;
 	(void)envp, (void)av;
 	if (ac < 1)
 		return (-1);
@@ -36,13 +36,13 @@ int main(int ac, char **av, char *envp[])
 			continue;
 		if (checker(cmd, lines))
 			continue;
-		paths = findPath();
-		paths = tokenizerrs(paths);
+		pathss = findPath();
+		pathss = tokenizerrs(paths);
 		pathcommand = test_path(paths, cmd[0]);
 		if (!pathcommand)
 			perror(av[0]);
 		else
-			execution(pathcommand, cmd);
+			exec(pathcommand, cmd);
 	}
 	if (linesize < 0 && fllgs.inter)
 		write(STDERR_FILENO, "\n", 1);
