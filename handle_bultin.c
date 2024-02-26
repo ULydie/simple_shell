@@ -9,14 +9,14 @@
 */
 int handle_builtins(char **cmd, char *lines)
 {
-	struct builtins builtins = {"env", "exit"};
+	struct builtins builtins = {"envir", "ext"};
 
-	if (_strcmp(*cmd, builtins.env) == 0)
+	if (_strcmp(*cmd, builtins.envir) == 0)
 	{
 		print_environ();
 		return (1);
 	}
-	else if (_strcmp(*cmd, builtins.exit) == 0)
+	else if (_strcmp(*cmd, builtins.ext) == 0)
 	{
 		exit_cmd(cmd, lines);
 		return (1);
