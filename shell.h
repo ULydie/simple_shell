@@ -44,7 +44,7 @@ void freeBuffers(char **buff);
 struct builtins
 {
 	char *envir;
-	char *ext;
+	char *exit;
 } builtins;
 
 struct inform
